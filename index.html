@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MARGA 030</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+
+background:
+linear-gradient(rgba(0,0,0,.82),rgba(0,0,0,.92)),
+linear-gradient(#000,#000);
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+
+font-family:'Poppins',sans-serif;
+color:white;
+
+overflow-x:hidden;
+
+}
+
+body::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+body::-webkit-scrollbar-thumb{
+
+background:#8d0000;
+border-radius:20px;
+
+}
+
+body::-webkit-scrollbar-track{
+
+background:#111;
+
+}
+
+#particles{
+
+position:fixed;
+
+left:0;
+top:0;
+
+width:100%;
+height:100%;
+
+pointer-events:none;
+
+z-index:-1;
+
+}
+
+header{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+flex-direction:column;
+
+text-align:center;
+
+padding:20px;
+
+}
+
+
+.logo-wrap{position:relative;display:inline-block}
+.crown{position:absolute;top:-28px;left:50%;transform:translateX(-50%);width:70px;z-index:2}
+
+.logo{
+
+width:130px;
+
+height:130px;
+
+border-radius:50%;
+
+border:5px solid #8b0000;
+
+box-shadow:
+
+0 0 30px red,
+0 0 80px rgba(255,0,0,.4);
+
+animation:pulse 3s infinite;
+
+object-fit:cover;
+
+}
+
+@keyframes pulse{
+
+0%{
+
+transform:scale(1);
+
+box-shadow:
+0 0 20px red;
+
+}
+
+50%{
+
+transform:scale(1.05);
+
+box-shadow:
+0 0 50px crimson;
+
+}
+
+100%{
+
+transform:scale(1);
+
+box-shadow:
+0 0 20px red;
+
+}
+
+}
+
+h1{
+
+font-family:'Cinzel',serif;
+
+font-size:65px;
+
+letter-spacing:8px;
+
+margin-top:30px;
+
+color:#ffffff;
+
+text-shadow:
+
+0 0 15px red,
+0 0 30px darkred;
+
+}
+
+.subtitle{
+
+margin-top:15px;
+
+font-size:20px;
+
+letter-spacing:3px;
+
+opacity:.9;
+
+color:#dddddd;
+
+}
+
+.scroll{
+
+margin-top:60px;
+
+font-size:15px;
+
+animation:updown 2s infinite;
+
+letter-spacing:3px;
+
+}
+
+@keyframes updown{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(12px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+section{
+
+padding:120px 10%;
+
+}
+
+.title{
+
+font-family:'Cinzel';
+
+font-size:42px;
+
+text-align:center;
+
+margin-bottom:70px;
+
+letter-spacing:5px;
+
+color:#ffffff;
+
+text-shadow:0 0 10px crimson;
+
+}
+
+.card{
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(8px);
+
+border:1px solid rgba(255,255,255,.1);
+
+padding:40px;
+
+border-radius:25px;
+
+margin-bottom:40px;
+
+transition:.5s;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:
+
+0 0 30px rgba(255,0,0,.3);
+
+}
+
+.card h2{
+
+font-family:'Cinzel';
+
+margin-bottom:20px;
+
+color:#ff5555;
+
+letter-spacing:2px;
+
+}
+
+.card p{
+
+line-height:2;
+
+font-size:17px;
+
+color:#dddddd;
+
+}
+
+footer{
+
+padding:50px;
+
+text-align:center;
+
+background:#000;
+
+letter-spacing:3px;
+
+color:#888;
+
+}
+
+.glow{
+
+color:white;
+
+text-shadow:
+
+0 0 10px red,
+0 0 25px crimson,
+0 0 40px red;
+
+}
+/* ===========================
+   ANIMATION
+=========================== */
+
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:1.2s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.line{
+
+width:120px;
+height:3px;
+margin:25px auto;
+background:linear-gradient(90deg,transparent,#ff2d2d,transparent);
+
+}
+
+.quote{
+
+font-size:22px;
+font-style:italic;
+text-align:center;
+color:#e5e5e5;
+line-height:2;
+
+}
+
+button{
+
+padding:15px 40px;
+
+background:#7a0000;
+
+border:none;
+
+border-radius:40px;
+
+color:white;
+
+font-size:16px;
+
+letter-spacing:2px;
+
+cursor:pointer;
+
+transition:.4s;
+
+margin-top:30px;
+
+}
+
+button:hover{
+
+background:#b10000;
+
+transform:scale(1.08);
+
+box-shadow:
+0 0 20px red,
+0 0 40px crimson;
+
+}
+
+@media(max-width:900px){
+
+h1{
+
+font-size:42px;
+letter-spacing:4px;
+
+}
+
+.title{
+
+font-size:32px;
+
+}
+
+.card{
+
+padding:25px;
+
+}
+
+.quote{
+
+font-size:18px;
+
+}
+
+
+.logo-wrap{position:relative;display:inline-block}
+.crown{position:absolute;top:-28px;left:50%;transform:translateX(-50%);width:70px;z-index:2}
+
+.logo{
+
+width:150px;
+height:150px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<canvas id="particles"></canvas>
+
+<header>
+<div style="position:relative;display:inline-block;">
+<div style="position:absolute;top:-55px;left:50%;transform:translateX(-50%);font-size:58px;z-index:5;">👑</div>
+
+<div class="logo-wrap"><img
+class="logo"
+src="https://files.catbox.moe/ss8kch.jpg"
+alt="Logo MARGA 030"></div><img class="crown" src="https://upload.wikimedia.org/wikipedia/commons/5/56/Heraldic_Royal_Crown_Gold.svg"></div>
+
+<h1 class="glow">
+MARGA 030
+</h1>
+
+<p class="subtitle">
+
+SILENCE • HONOR • POWER
+
+</p>
+
+<div class="scroll">
+
+SCROLL TO BEGIN
+
+</div>
+
+</header>
+
+<section class="fade">
+
+<h2 class="title">
+
+THE CODE OF MARGA
+
+</h2>
+
+<div class="line"></div>
+
+<p class="quote">
+
+"Bukan suara yang membuat seseorang dihormati,
+melainkan ketenangan yang membuat semua orang
+berpikir dua kali sebelum menentangnya."
+
+</p>
+
+</section>
+<section class="fade">
+
+    <h2 class="title">
+        MARGA 030
+    </h2>
+
+    <div class="card">
+
+        <h2>THE FIRST LAW</h2>
+
+        <p>
+            MARGA 030 bukan sekadar nama.<br><br>
+
+            Ia adalah prinsip.<br>
+            Ia adalah ketenangan.<br>
+            Ia adalah kehormatan.<br>
+            Ia adalah kendali.<br><br>
+
+            Tidak semua orang memahami arti diam.
+            Namun mereka selalu memahami akibatnya.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="fade">
+
+    <h2 class="title">
+        SILENT WORDS
+    </h2>
+
+    <div class="card">
+
+        <p class="quote">Diam Lebih Mahal.</p>
+        <div class="line"></div>
+
+        <p class="quote">Kuasa Tanpa Suara.</p>
+        <div class="line"></div>
+
+        <p class="quote">Tatapan Tanpa Takut.</p>
+        <div class="line"></div>
+
+        <p class="quote">Tidak Mencari Validasi.</p>
+        <div class="line"></div>
+
+        <p class="quote">Hormat Datang Sendiri.</p>
+        <div class="line"></div>
+
+        <p class="quote">Tenang Tetap Menang.</p>
+        <div class="line"></div>
+
+        <p class="quote">Berdiri Tanpa Goyah.</p>
+        <div class="line"></div>
+
+        <p class="quote">Hening Lebih Tajam.</p>
+        <div class="line"></div>
+
+        <p class="quote">Langkah Tanpa Ragu.</p>
+        <div class="line"></div>
+
+        <p class="quote">Kehormatan Tak Dijual.</p>
+        <div class="line"></div>
+
+        <p class="quote">Bicara Saat Perlu.</p>
+        <div class="line"></div>
+
+        <p class="quote">Prinsip Di Atas Segalanya.</p>
+        <div class="line"></div>
+
+        <p class="quote">Tetap Dingin Selamanya.</p>
+        <div class="line"></div>
+
+        <p class="quote">Loyalitas Tanpa Syarat.</p>
+        <div class="line"></div>
+
+        <p class="quote">Wibawa Tanpa Kata.</p>
+
+    </div>
+
+</section>
+
+<section class="fade">
+
+    <h2 class="title">
+        THE SILENT THRONE
+    </h2>
+
+    <div class="card">
+
+        <p class="quote">Diam Menguasai Segalanya.</p>
+        <div class="line"></div>
+
+        <p class="quote">Takhta Tak Pernah Ribut.</p>
+        <div class="line"></div>
+
+        <p class="quote">Bukan Untuk Dipuji.</p>
+        <div class="line"></div>
+
+        <p class="quote">Waktu Membuktikan Semua.</p>
+        <div class="line"></div>
+
+        <p class="quote">Hormat Tak Dipaksa.</p>
+        <div class="line"></div>
+
+        <p class="quote">Kendali Tanpa Emosi.</p>
+        <div class="line"></div>
+
+        <p class="quote">Langkah Selalu Pasti.</p>
+        <div class="line"></div>
+
+        <p class="quote">Tatapan Menghentikan Keraguan.</p>
+        <div class="line"></div>
+
+        <p class="quote">Keheningan Adalah Senjata.</p>
+        <div class="line"></div>
+
+        <p class="quote">Tak Mudah Digoyahkan.</p>
+        <div class="line"></div>
+
+        <p class="quote">Berdiri Di Atas.</p>
+        <div class="line"></div>
+
+        <p class="quote">Loyalitas Tidak Murah.</p>
+        <div class="line"></div>
+
+        <p class="quote">Nama Dijaga Selamanya.</p>
+        <div class="line"></div>
+
+        <p class="quote">Prinsip Lebih Tinggi.</p>
+        <div class="line"></div>
+
+        <p class="quote">Tidak Mengejar Sorotan.</p>
+        <div class="line"></div>
+
+        <p class="quote">Tetap Tenang Selalu.</p>
+        <div class="line"></div>
+
+        <p class="quote">Kuasa Tak Terlihat.</p>
+        <div class="line"></div>
+
+        <p class="quote">Jangan Meremehkan Diam.</p>
+        <div class="line"></div>
+
+        <p class="quote">Semua Ada Waktunya.</p>
+        <div class="line"></div>
+
+        <p class="quote">Mata Melihat Segalanya.</p>
+
+    </div>
+
+</section>
+
+<section class="fade">
+
+    <div class="card">
+
+        <h2>THE PHILOSOPHY</h2>
+
+        <p>
+
+            Mereka yang terlalu banyak berbicara,
+            biasanya sedang mencari pengakuan.
+
+            <br><br>
+
+            Mereka yang benar-benar kuat,
+            tidak sibuk menjelaskan dirinya.
+
+            <br><br>
+
+            Kehormatan lahir dari tindakan.
+
+            Bukan dari ucapan.
+
+            <br><br>
+
+            MARGA 030 memilih ketenangan,
+            karena suara yang paling berbahaya
+            adalah suara yang tidak pernah terdengar.
+
+        </p>
+
+    </div>
+
+</section>
+
+<section class="fade">
+
+    <h2 class="title">
+        THE SILENT THRONE
+    </h2>
+
+    <div class="card">
+
+        <p class="quote">Diam Menguasai Segalanya.</p>
+        <div class="line"></div>
+
+        <p class="quote">Takhta Tak Pernah Ribut.</p>
+        <div class="line"></div>
+
+        <p class="quote">Bukan Untuk Dipuji.</p>
+        <div class="line"></div>
+
+        <p class="quote">Waktu Membuktikan Semua.</p>
+        <div class="line"></div>
+
+        <p class="quote">Hormat Tak Dipaksa.</p>
+        <div class="line"></div>
+
+        <p class="quote">Kendali Tanpa Emosi.</p>
+        <div class="line"></div>
+
+        <p class="quote">Langkah Selalu Pasti.</p>
+        <div class="line"></div>
+
+        <p class="quote">Tatapan Menghentikan Keraguan.</p>
+        <div class="line"></div>
+
+        <p class="quote">Keheningan Adalah Senjata.</p>
+        <div class="line"></div>
+
+        <p class="quote">Tak Mudah Digoyahkan.</p>
+        <div class="line"></div>
+
+        <p class="quote">Berdiri Di Atas.</p>
+        <div class="line"></div>
+
+        <p class="quote">Loyalitas Tidak Murah.</p>
+        <div class="line"></div>
+
+        <p class="quote">Nama Dijaga Selamanya.</p>
+        <div class="line"></div>
+
+        <p class="quote">Prinsip Lebih Tinggi.</p>
+        <div class="line"></div>
+
+        <p class="quote">Tidak Mengejar Sorotan.</p>
+        <div class="line"></div>
+
+        <p class="quote">Tetap Tenang Selalu.</p>
+        <div class="line"></div>
+
+        <p class="quote">Kuasa Tak Terlihat.</p>
+        <div class="line"></div>
+
+        <p class="quote">Jangan Meremehkan Diam.</p>
+        <div class="line"></div>
+
+        <p class="quote">Semua Ada Waktunya.</p>
+        <div class="line"></div>
+
+        <p class="quote">Mata Melihat Segalanya.</p>
+
+    </div>
+
+</section>
+
+<section class="fade">
+
+    <div class="card">
+
+        <h2>THE PHILOSOPHY</h2>
+
+        <p>
+
+            Mereka yang terlalu banyak berbicara,
+            biasanya sedang mencari pengakuan.
+
+            <br><br>
+
+            Mereka yang benar-benar kuat,
+            tidak sibuk menjelaskan dirinya.
+
+            <br><br>
+
+            Kehormatan lahir dari tindakan.
+
+            Bukan dari ucapan.
+
+            <br><br>
+
+            MARGA 030 memilih ketenangan,
+            karena suara yang paling berbahaya
+            adalah suara yang tidak pernah terdengar.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ===========================
+     CLOSING SECTION
+=========================== -->
+
+<section class="fade">
+
+    <div class="card">
+
+        <h2>FINAL VERDICT</h2>
+
+        <p>
+
+            Tidak semua hal perlu dijelaskan.<br><br>
+
+            Tidak semua orang perlu memahami.<br><br>
+
+            Yang penting adalah tetap berdiri,<br>
+            meskipun tidak ada yang melihat.<br><br>
+
+            Karena MARGA 030 bukan tentang terlihat kuat.<br>
+            Tetapi tentang tidak pernah runtuh.
+
+        </p>
+
+    </div>
+
+</section>
+
+<section class="fade">
+
+    <div class="card">
+
+        <h2>LAST PRINCIPLE</h2>
+
+        <p class="quote">
+
+            Diam adalah bentuk tertinggi dari kendali.
+
+        </p>
+
+        <div class="line"></div>
+
+        <p class="quote">
+
+            Tidak semua perang harus dilakukan dengan suara.
+
+        </p>
+
+        <div class="line"></div>
+
+        <p class="quote">
+
+            Yang mengerti, akan diam.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ===========================
+     FOOTER
+=========================== -->
+
+
+<section class="fade show">
+<h2 class="title">PETINGGI MARGA 030</h2>
+<div class="card">
+<p class="quote">👑 IKI — Raja Iblis Kejam</p><div class="line"></div>
+<p class="quote">⚔️ MAHESA — King Coly</p><div class="line"></div>
+<p class="quote">🛡️ DICKY — Panglima Perang</p><div class="line"></div>
+<p class="quote">🦅 ALE — Strategis Utama</p><div class="line"></div>
+<p class="quote">🌹 JENNA — Ratu Kehormatan</p>
+</div>
+</section>
+
+<footer>
+
+    MARGA 030 • SILENCE IS POWER • EST. UNKNOWN
+
+</footer>
+
+<script>const c=document.getElementById("particles"),x=c.getContext("2d");function r(){c.width=innerWidth;c.height=innerHeight}r();onresize=r;let s=[...Array(40)].map(()=>({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*2+1,v:0.3+Math.random()*0.4}));function a(){x.clearRect(0,0,c.width,c.height);x.fillStyle="rgba(255,255,255,.7)";for(let i of s){x.beginPath();x.arc(i.x,i.y,i.r,0,7);x.fill();i.y+=i.v;if(i.y>c.height){i.y=-5;i.x=Math.random()*c.width}}requestAnimationFrame(a)}a();document.querySelectorAll(".fade").forEach(e=>e.classList.add("show"));</script></body>
+</html>
